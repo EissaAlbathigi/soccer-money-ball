@@ -207,8 +207,18 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.subheader("Model Performance")
-    st.metric("Final Model R²", "0.576")
-    st.metric("Final Model MAE", "€9.15M")
+    st.metric("Final Model R²", "0.462")
+    st.metric("Final Model MAE", "€9.60M")
+
+    with st.expander("What do R² and MAE mean?"):
+        st.markdown("""
+        **R² (0.462):** The model explains about 46% of the differences in player
+        market values in the test data. Higher is better, with 1.0 representing
+        a perfect fit.
+
+        **MAE (€9.60M):** On average, the model's prediction is about €9.6 million
+        away from a player's actual market value. Lower is better.
+        """)
 
 with col2:
     st.subheader("Baseline Comparison")
